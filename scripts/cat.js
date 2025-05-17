@@ -15,7 +15,7 @@ export const cat = {
 
     show : function(){
         this.element.classList.add("cat");
-        this.default();
+        this.eat();
         document.getElementById("arena").append(this.element);
     },
 
@@ -52,6 +52,11 @@ export const cat = {
 
     moveDown : function(y = this.speed){
         this.y += y;
+        this.element.style.top = `${this.y}px`;
+    },
+
+    moveUp : function(y = this.speed){
+        this.y -= y;
         this.element.style.top = `${this.y}px`;
     }
 }
